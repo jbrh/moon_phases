@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Moon phases</title>
+      
+ <!-- Include meta tag to ensure proper rendering and touch zooming -->
+<meta name="viewport" content="width=device-width, initial-scale=1">-
+
+<!-- Include the jQuery library -->
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Include the jQuery Mobile library -->
+<!--<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->     
+      
+<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+      
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+      
+      
+      
+      
+      
+      
+      <!--<script src="http://code.jquery.com/jquery-1.10.2.js"></script>-->
+      
+      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      
+      <link href="styles.css" rel="stylesheet">
+      
+   <script> // http://www.tutorialspoint.com/jqueryui/jqueryui_droppable.htm
+      $(function() {
+         $( "#waxingcrescentimg" ).draggable();
+         $( "#firstquarterimg" ).draggable();
+         $( "#waxinggibbousimg" ).draggable();
+         $( "#fullmoonimg" ).draggable();
+         $( "#waninggibbousimg" ).draggable();
+         $( "#thirdquarterimg" ).draggable();
+         $( "#waningcrescentimg" ).draggable();
+         $( "#newmoonimg" ).draggable();
+         
+
+         $( "#deg0" ).droppable({
+            accept: "#firstquarterimg",
+            drop: function( event, ui ) {
+               $( this )
+               .addClass( "ui-state-highlight" )
+               .find( "p" )
+               .html( "First Quarter!" )
+               .droppable('disable')
+               .draggable('disable');
+               }
+         });
+         $( "#deg45" ).droppable({
+            accept: "#waxingcrescentimg",
+            drop: function( event, ui ) {
+            $( this )
+            .addClass( "ui-state-highlight" )
+            .find( "p" )
+            .html( "Waxing Crescent!" )
+            .droppable('disable')
+            .draggable('disable');
+            }
+         });
+         
+         $( "#deg90" ).droppable({
+            accept: "#newmoonimg",
+            drop: function( event, ui ) {
+            
+            $( this )
+            .addClass( "ui-state-highlight" )
+            .find( "p" )
+            .html( "New Moon!" )
+            .droppable('disable')
+            .draggable('disable');
+            }
+         });
+         $( "#deg135" ).droppable({
+            accept: "#waningcrescentimg",
+            drop: function( event, ui ) {
+            
+            $( this )
+            .addClass( "ui-state-highlight" )
+            .find( "p" )
+            .html( "Waxing Crescent!" )
+            .droppable('disable')
+            .draggable('disable');
+            }
+         });
+         $( "#deg180" ).droppable({
+            accept: "#thirdquarterimg",
+            drop: function( event, ui ) {
+           
+            $( this )
+            .addClass( "ui-state-highlight" )
+            .find( "p" )
+            .html( "Third Quarter!" )
+            .droppable('disable')
+            .draggable('disable');
+            }
+         });
+         $( "#deg225" ).droppable({
+            accept: "#waninggibbousimg",
+            drop: function( event, ui ) {
+            $( this )
+            .addClass( "ui-state-highlight" )
+            .find( "p" )
+            .html( "Waning Gibbous!" )
+            .droppable('disable')
+            .draggable('disable');
+            }
+         });
+         $( "#deg270" ).droppable({
+            accept: "#fullmoonimg",
+            drop: function( event, ui ) {
+            $( this )
+            .addClass( "ui-state-highlight" )
+            .find( "p" )
+            .html( "Full Moon!" )
+            .droppable('disable')
+            .draggable('disable');
+            }
+         });
+         $( "#deg315" ).droppable({
+            accept: "#waxinggibbousimg",
+            drop: function( event, ui ) {
+            $( this )
+            .addClass( "ui-state-highlight" )
+            
+            .find( "p" )
+            .html( "Waxing Gibbous!" )
+            .droppable('disable')
+            .draggable('disable');
+            }
+         });
+      });
+   </script>
+</head>
+<body>
+    
+  <!--http://dabblet.com/gist/3864650-->
+<div class="container-fluid">
+   <div class="row">
+   
+    <div class="col-md-5">
+       <div class="circle-container">
+	      <div class="ui-widget-header" id="thisone"><img id="center" src='earth.png'></div>
+	      <div id='deg0' class="ui-widget-header"><p class="message">&zwnj;</p><hr></div>
+	      <div id='deg45' class="ui-widget-header"><p class="message">&zwnj;</p><hr></div>
+	      <div id='deg90' class="ui-widget-header"><p class="message">&zwnj;</p><hr></div>
+	      <div id='deg135' class="ui-widget-header"><p class="message">&zwnj;</p><hr></div>
+	      <div id='deg180' class="ui-widget-header" ><p class="message">&zwnj;</p><hr></div>
+	      <div id='deg225' class="ui-widget-header"><p class="message">&zwnj;</p><hr></div>
+	      <div id='deg270' class="ui-widget-header"><p class="message">&zwnj;</p><hr></div>
+	      <div id='deg315' class="ui-widget-header"><p class="message">&zwnj;</p><hr></div>
+    </div>
+    </div>
+    
+    <div class="col-md-1"></div>
+    
+    
+     <div class='col-md-6'>
+       <div class="clear"></div>
+       <ul class="phases1">
+          <li id="firstquarterimg" class="ui-widget-content"><img src='firstquarter_bright.png'></li>
+          <li id="waxingcrescentimg" class="ui-widget-content"><img src='waxingcrescent_bright.png'></li>
+          <li id="newmoonimg" class="ui-widget-content"><img src='newmoon.png'></li>
+          <li id="waningcrescentimg" class="ui-widget-content"><img src='waningcrescent_bright.png'></li>
+          </ul>
+      <ul class="phases2">
+          <li id="thirdquarterimg" class="ui-widget-content"><img src='thirdquarter_bright.png'></li>
+          <li id="waninggibbousimg" class="ui-widget-content"><img src='waninggibbous_bright.png'></li>
+          <li id="fullmoonimg" class="ui-widget-content"><img src='fullmoon.png'></li>
+          <li id="waxinggibbousimg" class="ui-widget-content"><img src='waxinggibbous_bright.png'></li>
+      </ul>
+      <br></br>
+      <br></br>
+      <div>
+         <h2 id="instructions">Drag each lunar phase to the correct position on the diagram.  Think about where it should be in relation to the position of the Earth and the Sun (below the diagram).  You will know when you place each image correctly :)</h2>
+      </div>
+     </div>
+     
+     </div>
+     <div class="row">
+        <img id="sun" src="sunshining.gif">
+     </div>
+     
+   </div>
+</div>
+
+</body>
+</html>
