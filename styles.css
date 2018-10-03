@@ -4,7 +4,7 @@
  */
  
 body {
-	background-color: #020731;
+	background-color: #00007a;
 	height: 1000px;
 }
 .circle-container {
@@ -14,7 +14,7 @@ body {
 	padding: 2.8em; /*= 2em * 1.4 (2em = half the width of an img, 1.4 = sqrt(2))*/
 	border: dashed 2px;
 	border-radius: 50%;
-	margin: 9em auto 0;
+	margin: 6em auto 0;
 	margin-left: 80px;
 }
 .circle-container div {
@@ -51,7 +51,7 @@ body {
 }
 
 .ui-widget-content img {
-	width: 80px;
+	width: 70px;
 	
 }
 
@@ -64,10 +64,10 @@ body {
 	background: green;
 }
 
-.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
+/*.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
 	background-color: #020731;
 	text-shadow: none;
-}
+}*/
 
 
 #thisone.ui-widget-header {
@@ -90,7 +90,7 @@ body {
 
 #center {
 
-	width: 118px;
+	width: 100px;
 
 }
 
@@ -116,11 +116,15 @@ ul {
 
 #sun {
 	width: 150px;
-	padding-top: 10px;
+	padding-top: 8px;
 	margin-left: 193px;
 }
 
 #instructions {
-	margin-right: 20px;
+	margin-right: 40px;
 	color: green;
+}
+
+#yougotthis img {
+	width: 100px;
 }

@@ -1,146 +1,202 @@
 <!doctype html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <title>Moon phases</title>
+<head>
+<meta charset="utf-8">
+<title>Moon phases</title>
       
- <!-- Include meta tag to ensure proper rendering and touch zooming -->
 <meta name="viewport" content="width=device-width, initial-scale=1">-
 
-<!-- Include the jQuery library -->
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-<!-- Include the jQuery Mobile library -->
-<!--<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->     
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="text/javascript"></script>
       
-<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+
+
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
       
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
       
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
       
+<link href="styles.css" rel="stylesheet">
       
+<script> 
       
-      
-      
-      <!--<script src="http://code.jquery.com/jquery-1.10.2.js"></script>-->
-      
-      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-      
-      <link href="styles.css" rel="stylesheet">
-      
-   <script> // http://www.tutorialspoint.com/jqueryui/jqueryui_droppable.htm
+
       $(function() {
-         $( "#waxingcrescentimg" ).draggable();
-         $( "#firstquarterimg" ).draggable();
-         $( "#waxinggibbousimg" ).draggable();
-         $( "#fullmoonimg" ).draggable();
-         $( "#waninggibbousimg" ).draggable();
-         $( "#thirdquarterimg" ).draggable();
-         $( "#waningcrescentimg" ).draggable();
-         $( "#newmoonimg" ).draggable();
+
+        // var moonCount = 0;
+        // var totalMoons = 8;
+
+        $('#yougotthis img').hide();
+
+         $( "#waxingcrescentimg" ).draggable({
+            containment: '.rowone',
+            cursor: 'move',
+            revert: false});
+         $( "#firstquarterimg" ).draggable({
+            containment: '.rowone',
+            cursor: 'move',
+            revert: false});
+         $( "#waxinggibbousimg" ).draggable({
+            containment: '.rowone',
+            cursor: 'move',
+            revert: false});
+         $( "#fullmoonimg" ).draggable({
+            containment: '.rowone',
+            cursor: 'move',
+            revert: false});
+         $( "#waninggibbousimg" ).draggable({
+            containment: '.rowone',
+            cursor: 'move',
+            revert: false});
+         $( "#thirdquarterimg" ).draggable({
+            containment: '.rowone',
+            cursor: 'move',
+            revert: false});
+         $( "#waningcrescentimg" ).draggable({
+            containment: '.rowone',
+            cursor: 'move',
+            revert: false});
+         $( "#newmoonimg" ).draggable({
+            containment: '.rowone',
+            cursor: 'move',
+            revert: false});
+
+         $("#deg0").droppable
          
 
          $( "#deg0" ).droppable({
             accept: "#firstquarterimg",
+            tolerance: "fit",
             drop: function( event, ui ) {
                $( this )
+
                .addClass( "ui-state-highlight" )
                .find( "p" )
                .html( "First Quarter!" )
+               //.droppable('disable')
+               .draggable().draggable('disable')
                .droppable('disable')
-               .draggable('disable');
-               }
+               // moonCount++;
+               // alert(moonCount);
+               //console.log(moonCount);
+               } 
+            
          });
          $( "#deg45" ).droppable({
             accept: "#waxingcrescentimg",
+            tolerance: "fit",
             drop: function( event, ui ) {
-            $( this )
-            .addClass( "ui-state-highlight" )
-            .find( "p" )
-            .html( "Waxing Crescent!" )
-            .droppable('disable')
-            .draggable('disable');
-            }
+              $( this )
+              .addClass( "ui-state-highlight" )
+              .find( "p" )
+              .html( "Waxing Crescent!" )
+              //.droppable('disable')
+              .draggable().draggable('disable')
+              // moonCount++;
+              // alert(moonCount);
+              }
          });
          
          $( "#deg90" ).droppable({
             accept: "#newmoonimg",
+            tolerance: "fit",
             drop: function( event, ui ) {
-            
-            $( this )
-            .addClass( "ui-state-highlight" )
-            .find( "p" )
-            .html( "New Moon!" )
-            .droppable('disable')
-            .draggable('disable');
-            }
+              $( this )
+              .addClass( "ui-state-highlight" )
+              .find( "p" )
+              .html( "New Moon!" )
+              //.droppable('disable')
+              .draggable().draggable('disable')
+              // moonCount++;
+              // alert(moonCount);
+              }
          });
          $( "#deg135" ).droppable({
             accept: "#waningcrescentimg",
-            drop: function( event, ui ) {
-            
-            $( this )
-            .addClass( "ui-state-highlight" )
-            .find( "p" )
-            .html( "Waxing Crescent!" )
-            .droppable('disable')
-            .draggable('disable');
-            }
+            tolerance: "fit",
+            drop: function( event, ui ) {  
+              $( this )
+              .addClass( "ui-state-highlight" )
+              .find( "p" )
+              .html( "Waxing Crescent!" )
+              //.droppable('disable')
+              .draggable().draggable('disable')
+              // moonCount++;
+              // alert(moonCount);
+              }
          });
          $( "#deg180" ).droppable({
             accept: "#thirdquarterimg",
+            tolerance: "fit",
             drop: function( event, ui ) {
-           
-            $( this )
-            .addClass( "ui-state-highlight" )
-            .find( "p" )
-            .html( "Third Quarter!" )
-            .droppable('disable')
-            .draggable('disable');
-            }
+              $( this )
+              .addClass( "ui-state-highlight" )
+              .find( "p" )
+              .html( "Third Quarter!" )
+              //.droppable('disable')
+              .draggable().draggable('disable')
+              // moonCount++;
+              // alert(moonCount);
+              }
          });
          $( "#deg225" ).droppable({
             accept: "#waninggibbousimg",
+            tolerance: "fit",
             drop: function( event, ui ) {
-            $( this )
-            .addClass( "ui-state-highlight" )
-            .find( "p" )
-            .html( "Waning Gibbous!" )
-            .droppable('disable')
-            .draggable('disable');
-            }
+              $( this )
+              .addClass( "ui-state-highlight" )
+              .find( "p" )
+              .html( "Waning Gibbous!" )
+              //.droppable('disable')
+              .draggable().draggable('disable')
+              // moonCount++;
+              // alert(moonCount);
+              }
          });
          $( "#deg270" ).droppable({
             accept: "#fullmoonimg",
+            tolerance: "fit",
             drop: function( event, ui ) {
-            $( this )
-            .addClass( "ui-state-highlight" )
-            .find( "p" )
-            .html( "Full Moon!" )
-            .droppable('disable')
-            .draggable('disable');
-            }
+              $( this )
+              .addClass( "ui-state-highlight" )
+              .find( "p" )
+              .html( "Full Moon!" )
+              //.droppable('disable')
+              .draggable().draggable('disable')
+              // moonCount++;
+              // alert(moonCount);
+              }
          });
          $( "#deg315" ).droppable({
             accept: "#waxinggibbousimg",
+            tolerance: "fit",
             drop: function( event, ui ) {
-            $( this )
-            .addClass( "ui-state-highlight" )
-            
-            .find( "p" )
-            .html( "Waxing Gibbous!" )
-            .droppable('disable')
-            .draggable('disable');
-            }
+              $( this )
+              .addClass( "ui-state-highlight" )
+              .find( "p" )
+              .html( "Waxing Gibbous!" )
+              //.droppable('disable')
+              .draggable().draggable('disable')
+              // moonCount++;
+              // alert(moonCount);
+              }
          });
+
+      //if (moonCount == totalMoons) $('#yougotthis img').show();
+         
       });
+
+      
+      
+
+
    </script>
 </head>
 <body>
     
-  <!--http://dabblet.com/gist/3864650-->
 <div class="container-fluid">
-   <div class="row">
+   <div class="row rowone">
    
     <div class="col-md-5">
        <div class="circle-container">
@@ -161,11 +217,13 @@
     
      <div class='col-md-6'>
        <div class="clear"></div>
+       <div id="yougotthis"><img src='youdiditsun.png'></div>
        <ul class="phases1">
           <li id="firstquarterimg" class="ui-widget-content"><img src='firstquarter_bright.png'></li>
           <li id="waxingcrescentimg" class="ui-widget-content"><img src='waxingcrescent_bright.png'></li>
           <li id="newmoonimg" class="ui-widget-content"><img src='newmoon.png'></li>
           <li id="waningcrescentimg" class="ui-widget-content"><img src='waningcrescent_bright.png'></li>
+          
           </ul>
       <ul class="phases2">
           <li id="thirdquarterimg" class="ui-widget-content"><img src='thirdquarter_bright.png'></li>
@@ -175,8 +233,8 @@
       </ul>
       <br></br>
       <br></br>
-      <div>
-         <h2 id="instructions">Drag each lunar phase to the correct position on the diagram.  Think about where it should be in relation to the position of the Earth and the Sun (below the diagram).  You will know when you place each image correctly :)</h2>
+      <div id="instructions">
+         <h3>Drag each lunar phase to the correct position on the diagram.</h3><br><h3>Think about looking out from Earth and where the Sun would illuminate the Moon's surface at each position.</h3>
       </div>
      </div>
      
@@ -189,4 +247,5 @@
 </div>
 
 </body>
+
 </html>
